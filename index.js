@@ -16,7 +16,9 @@ this.mouse = {
 
 class Ball {
     constructor(x, y, dx, dy, r, color) {
-        this.r = r || 10;
+        this.gravity = 1;
+        this.friction = 0.8;
+        this.r = r || 50;
         this.x = x || randomIntFromInterval(0 + this.r, window.innerWidth - this.r);
         this.y =
             y || randomIntFromInterval(0 + this.r, window.innerHeight - this.r);
@@ -32,13 +34,19 @@ class Ball {
         c.fill();
     }
     update() {
+        this.y += this.dy;
+        if (this.y + this.r + this.dy >= screen.height - 18) {
+            this.dy = -this.dy * this.friction;
+        } else {
+            this.dy += this.gravity;
+        }
         this.draw();
     }
 }
 class Canvas {
     constructor() {
         this.balls = [];
-        for (let i = 0; i < 100; i++) {
+        for (let i = 0; i < 1; i++) {
             this.balls.push(new Ball());
         }
     }
@@ -53,6 +61,10 @@ class Canvas {
 
 let mycan = new Canvas();
 mycan.animate();
+
+window.addEventListener("click", (e) => {
+    mycan.balls.push(new Ball(e.clientX, e.clientY));
+});
 
 window.addEventListener("mousemove", (e) => {
     mouse.x = e.clientX;
