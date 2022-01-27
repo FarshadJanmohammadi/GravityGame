@@ -15,7 +15,7 @@ this.mouse = {
 };
 
 class Ball {
-    constructor(x, y, dx, ddy, r, color) {
+    constructor(x, y, dx, dy, r, color) {
         this.r = r || 10;
         this.x = x || randomIntFromInterval(0 + this.r, window.innerWidth - this.r);
         this.y =
@@ -27,7 +27,7 @@ class Ball {
     }
     draw() {
         c.beginPath();
-        c.arc(this.x, this.y.this.r, 0, 2 * Math.PI);
+        c.arc(this.x, this.y, this.r, 0, 2 * Math.PI);
         c.fillStyle = "red";
         c.fill();
     }
@@ -47,16 +47,12 @@ class Canvas {
         this.balls.forEach((ball) => {
             ball.update();
         });
-        requestAnimationFrame(this.animate);
+        requestAnimationFrame(this.animate.bind(this));
     }
 }
 
 let mycan = new Canvas();
 mycan.animate();
-
-window.addEventListener("click", (e) => {
-    balls.push(new Ball(e.clientX, e.clientY));
-});
 
 window.addEventListener("mousemove", (e) => {
     mouse.x = e.clientX;
