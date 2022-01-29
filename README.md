@@ -1,7 +1,7 @@
 
 # Gravity Game 
 
-Gravity game using JavaScript and object orientation
+Gravity game using JavaScript and object orientation and Canvas HTML5
 
 
 ## Authors
