@@ -19,7 +19,7 @@ Gravity game using JavaScript and object orientation and Canvas HTML5
 ## Demo
 
 Insert gif or link to demo:
-https://farshadjanmohammadi.github.io/GravityGame/
+https://relaxed-swanson-cffcbe.netlify.app
 
 
 ## 🚀 About Me
