@@ -24,7 +24,7 @@ class Ball {
             y || randomIntFromInterval(0 + this.r, window.innerHeight - this.r);
         this.dx = dx || (Math.random() - 0.5) * 4;
         this.dy = dy || Math.random() * 4;
-        this.color =  `rgba(${Math.random()*255},${Math.random()*255},${Math.random()*100},${Math.random()}`;
+        this.color =  `rgba(${Math.random()*255},${Math.random()*255},${Math.random()*100}`;
         this.draw();
     }
     draw() {
