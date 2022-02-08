@@ -24,13 +24,13 @@ class Ball {
             y || randomIntFromInterval(0 + this.r, window.innerHeight - this.r);
         this.dx = dx || (Math.random() - 0.5) * 4;
         this.dy = dy || Math.random() * 4;
-        this.color = color || `rgba(231,76,60,${Math.random()}`;
+        this.color = color || `rgba(231,76,${Math.random()}`;
         this.draw();
     }
     draw() {
         c.beginPath();
         c.arc(this.x, this.y, this.r, 0, 2 * Math.PI);
-        c.fillStyle = "rgb(252, 3, Math.random() * 100)";
+        c.fillStyle = `rgb(252, 3, ${Math.random() * 100})`;
         c.fill();
     }
     update() {
@@ -55,7 +55,8 @@ class Canvas {
         this.balls.forEach((ball) => {
             ball.update();
         });
-        requestAnimationFrame(this.animate.bind(this));
+1
+        /requestAnimationFrame(this.animate.bind(this));
     }
 }
 
