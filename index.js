@@ -35,7 +35,7 @@ class Ball {
     }
     update() {
         this.y += this.dy;
-        if (this.y + this.r + this.dy >= screen.height - 11.2) {
+        if (this.y + this.r + this.dy >= screen.height - 100) {
             this.dy = -this.dy * this.friction;
         } else {
             this.dy += this.gravity;
