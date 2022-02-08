@@ -30,7 +30,7 @@ class Ball {
     draw() {
         c.beginPath();
         c.arc(this.x, this.y, this.r, 0, 2 * Math.PI);
-        c.fillStyle = "rgb(252, 3, 127)";
+        c.fillStyle = "rgb(252, 3, Math.random() * 100)";
         c.fill();
     }
     update() {
